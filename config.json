@@ -1,0 +1,39 @@
+{
+    "data_cfg" :
+    {
+        "data_type"     : "classfication",
+        "train_number"  : 50000,
+        "test_number"   : 10000,
+        "data_dir"      : "/home/cj/learning/data/cifar10/cifar-10-batches-bin",
+        "train_list"    : "/home/cj/learning/data/cifar10/cifar-10-batches-bin/train.txt",
+        "test_list"     : "/home/cj/learning/data/cifar10/cifar-10-batches-bin/test.txt",
+        "image_height"  : 32,
+        "image_width"   : 32,
+        "image_channel" : 3,
+        "class_number"  : 10
+    },
+    "train_cfg" :
+    {
+        "init_lr"         : 0.1,
+        "lr_policy"       : "lr_step",
+        "lr_step" :  
+        {
+            "comment" : "lr = init_lr * alpha ^ int((now_epoch - epoch) / 50)",
+            "alpha"   : 0.1,
+            "epoch"   : 50 
+        },
+        "lr_1" :  
+        {
+            "comment" : "lr = init_lr * alpha ^ int((now_epoch - epoch) / 50)",
+            "alpha"   : 0.1,
+            "epoch"   : 50 
+        },
+        "momentum"        : 0.9,
+        "weight_decay"    : 0.0002,
+        "batch_size"      : 128,
+        "train_epochs"    : 250,
+        "epochs_per_eval" : 10,
+        "log_every_n_iter": 100,
+        "model_dir"       : "savemodel"
+    }
+}
